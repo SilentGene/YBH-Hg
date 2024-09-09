@@ -1,0 +1,259 @@
+DATASET_HEATMAP
+#In heatmaps, each ID is associated to multiple numeric values, which are displayed as a set of colored boxes defined by a color gradient
+#lines starting with a hash are comments and ignored during parsing
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file.
+#SEPARATOR TAB
+#SEPARATOR SPACE
+SEPARATOR COMMA
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL,Intermediate water
+
+#dataset color (can be changed later)
+COLOR,#F8766D
+
+#define labels for each individual field column
+FIELD_LABELS,FL 90 m,PA 90 m
+
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+
+
+#Heatmaps can have an optional Newick formatted tree assigned. Its leaf IDs must exactly match the dataset FIELD_LABELS.
+#The tree will be used to sort the dataset fields, and will be displayed above the dataset. It can have branch lengths defined.
+#All newlines and spaces should be stripped from the tree, and COMMA cannot be used as the dataset separator if a FIELD_TREE is provided.
+#FIELD_TREE (((f1:0.2,f5:0.5):1,(f2:0.2,f3:0.3):1.2):0.5,(f4:0.1,f6:0.5):0.8):1;
+
+
+#=================================================================#
+#     all other optional settings can be set or changed later     #
+#           in the web interface (under 'Datasets' tab)           #
+#=================================================================#
+
+#Each dataset can have a legend, which is defined using LEGEND_XXX fields below
+#For each row in the legend, there should be one shape, color and label.
+#Optionally, you can define an exact legend position using LEGEND_POSITION_X and LEGEND_POSITION_Y. To use automatic legend positioning, do NOT define these values
+#Optionally, shape scaling can be present (LEGEND_SHAPE_SCALES). For each shape, you can define a scaling factor between 0 and 1.
+#Shape should be a number between 1 and 6, or any protein domain shape definition.
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+
+#LEGEND_TITLE,Dataset legend
+#LEGEND_POSITION_X,100
+#LEGEND_POSITION_Y,100
+#LEGEND_SHAPES,1,2,3
+#LEGEND_COLORS,#ff0000,#00ff00,#0000ff
+#LEGEND_LABELS,value1,value2,value3
+#LEGEND_SHAPE_SCALES,1,1,0.5
+
+#left margin, used to increase/decrease the spacing to the next dataset. Can be negative, causing datasets to overlap.
+MARGIN,50
+
+#width of the individual boxes
+STRIP_WIDTH,40
+
+#always show internal values; if set, values associated to internal nodes will be displayed even if these nodes are not collapsed. It could cause overlapping in the dataset display.
+#SHOW_INTERNAL 0
+
+
+#show dashed lines between leaf labels and the dataset
+#DASHED_LINES 1
+
+#if a FIELD_TREE is present, it can be hidden by setting this option to 0
+#SHOW_TREE 1
+
+#define the color for the NULL values in the dataset. Use the letter X in the data to define the NULL values
+#COLOR_NAN #000000
+
+#automatically create and display a legend based on the color gradients and values defined below
+AUTO_LEGEND,0
+
+#define the heatmap gradient colors. Values in the dataset will be mapped onto the corresponding color gradient.
+COLOR_MIN,#ffffff
+COLOR_MAX,#c90076
+
+#you can specify a gradient with three colors (e.g red to yellow to green) by setting 'USE_MID_COLOR' to 1, and specifying the midpoint color
+USE_MID_COLOR,1
+COLOR_MID,#6ea7da
+
+
+#By default, color gradients will be calculated based on dataset values. You can force different values to use in the calculation by setting the values below:
+USER_MIN_VALUE,0
+USER_MID_VALUE,0.0026
+USER_MAX_VALUE,0.052
+
+#border width; if set above 0, a border of specified width (in pixels) will be drawn around individual cells
+BORDER_WIDTH,1
+
+#border color; used only when BORDER_WIDTH is above 0
+BORDER_COLOR,#bcbcbc
+
+#display or hide the text labels above each field column
+#SHOW_LABELS 1
+
+#text label size factor
+SIZE_FACTOR,1
+
+#text label rotation
+#LABEL_ROTATION 0
+
+#text label shift in pixels (positive or negative)
+#LABEL_SHIFT 0
+
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
+#ID1 value1 value2 value3 value4 value5 value6
+#You can use the 'X' letter instead of the numeric value to denote the empty fields. These will be colored using 'COLOR_NAN' option set above.
+#9606 100 300 250 100 50 210
+#15303 20 X 130 200 300 15
+F120_NODE_12653_4-Deltaproteobacteria,0,0
+F120_NODE_17476_1-Pirellulaceae,0,0
+F120_NODE_1992_5-Desulfatiglandales,5.01121E-05,0
+F120_NODE_27095_2-Desulfacyla,0,0
+F140_NODE_12656_4-Deltaproteobacteria,0,0
+F140_NODE_15068_4-Pirellulaceae,0,0
+F140_NODE_28901_3-Bacteroidetes,0,0
+F140_NODE_33704_2-Pirellulales,0,0
+F140_NODE_48993_3-Desulfacyla,0,0
+F170_NODE_14708_2-Pirellulaceae,0,0
+F170_NODE_15974_2-Desulfacyla,0,0
+F170_NODE_1659_2-Desulfobacterales,0,0
+F170_NODE_27066_1-Bacteroidales,0,6.57887E-05
+F170_NODE_46508_4-Desulfacyla,0,0
+F170_NODE_49454_4-Deltaproteobacteria,0,0
+F170_NODE_5139_11-Deltaproteobacteria,0,0
+F170_NODE_51565_3-Deltaproteobacteria,0,0
+F170_NODE_53960_2-Pirellulaceae,0,0
+lowF_k141_1117838_9-Desulfobacterales,0,0
+lowF_k141_1127224_77-Desulfobacterales,0,9.30776E-05
+lowF_k141_1197396_4-Lentisphaeria,0,0
+lowF_k141_120019_2-Pirellulaceae,0,0
+lowF_k141_123866_7-Desulfobacterales,0,0
+lowF_k141_129118_4-Desulfatiglandales,0,9.79755E-05
+lowF_k141_142155_6-Desulfatiglandales,0,0
+lowF_k141_168551_10-Desulfatiglandales,0,0
+lowF_k141_215275_2-Desulfatiglandales,0,0
+lowF_k141_217096_1-Desulfatiglandales,0,0
+lowF_k141_226152_19-Desulfatiglandaceae,0,0
+lowF_k141_318937_7-Desulfatiglandales,0,0
+lowF_k141_372227_5-Desulfatiglandaceae,0,0
+lowF_k141_376358_2-Pirellulaceae,0,0
+lowF_k141_38619_4-Myxococcota,0,0
+lowF_k141_411010_1-Desulfarculia,0,0
+lowF_k141_430490_4-Desulfobacterales,0,0
+lowF_k141_431344_3-Victivallales,0,0
+lowF_k141_474613_2-Desulfobacterales,0,0
+lowF_k141_477307_9-Desulfobacterales,0,0
+lowF_k141_486277_6-Desulfatiglandales,0,0
+lowF_k141_600704_2-Anaerolineae,0,0
+lowF_k141_641072_3-Desulfatiglandales,0,0
+lowF_k141_672005_1-Desulfatiglandaceae,0,0
+lowF_k141_69141_13-Deltaproteobacteria,0,0
+lowF_k141_695991_2-Desulfobacterales,2.96803E-05,0
+lowF_k141_733425_4-Desulfobacterales,0,8.46815E-07
+lowF_k141_81535_1-Desulfobacterales,0,0
+lowF_k141_831624_2-Armatimonadota,0,0
+lowF_k141_841453_1-Desulfatiglandaceae,0,0
+lowF_k141_844920_1-Desulfobacterales,0,0
+lowF_k141_893660_3-Desulfarculales,0,0
+lowP_k141_1044660_2-Deltaproteobacteria,0,0
+lowP_k141_107206_3-Desulfatiglandales,0,0.000101071
+lowP_k141_1075252_10-Bacteria,0,0
+lowP_k141_117642_1-Vecturithrix,0,0
+lowP_k141_1179086_4-Desulfacyla,0,0
+lowP_k141_1240335_23-Proteobacteria,0,0
+lowP_k141_19552_10-Deltaproteobacteria,0,0
+lowP_k141_32834_4-NaphS2,9.79792E-05,5.45775E-05
+lowP_k141_406389_2-Desulfatiglandaceae,0,0
+lowP_k141_440421_4-Pirellulaceae,0,0
+lowP_k141_466298_1-Vecturithrix,0,0
+lowP_k141_471069_6-Anaerolineae,0,0
+lowP_k141_491442_1-Desulfomonilales,0,0
+lowP_k141_511400_3-Pirellulaceae,3.12847E-05,0
+lowP_k141_531048_3-Nitrospinota,0,0
+lowP_k141_58923_1-Deltaproteobacteria,0,0
+lowP_k141_590445_4-Myxococcota,0,0
+lowP_k141_622823_13-Myxococcota,0,0
+lowP_k141_824049_7-Anaerolineae,0,0
+lowP_k141_862612_112-Anaerolineaceae,0,0
+lowP_k141_907560_19-Myxococcota,0,0
+lowP_k141_928192_1-Desulfomonilales,0,0
+lowP_k141_933365_1-Desulfobacterales,0,0
+lowP_k141_944349_4-Desulfacyla,0,0
+P120_NODE_14563_2-Anaerolineae,0,0
+P120_NODE_21156_3-Bacteroidetes,0,0
+P120_NODE_267_17-Bacteroidales,0,0
+P120_NODE_5987_10-Desulfosarcinaceae,1.98069E-07,0
+P120_NODE_6447_5-Pirellulaceae,0,0
+P140_NODE_11547_7-Deltaproteobacteria,0,0
+P140_NODE_14691_5-Desulfobacterales,0,0
+P140_NODE_18520_4-Desulfobacterales,0,0
+P140_NODE_29158_3-Proteobacteria,0,0
+P140_NODE_38726_1-Deltaproteobacteria,0,1.34888E-05
+P140_NODE_5398_5-Pirellulaceae,0,0
+P140_NODE_6887_4-Deltaproteobacteria,0,0
+P170_NODE_10722_2-Pirellulaceae,0,0
+P170_NODE_17315_2-Deltaproteobacteria,0,0
+P170_NODE_20483_6-Deltaproteobacteria,0,0
+P170_NODE_26621_1-Desulfobacteraceae,0,0
+P170_NODE_30557_2-Marinimicrobia,0,0
+P170_NODE_31974_4-Deltaproteobacteria,0,0
+P170_NODE_36658_1-Pirellulaceae,0,0
+P170_NODE_4823_2-Desulfobacterales,0,0
+P90_NODE_10381_1-Myxococcota,2.4677E-06,0.002722571
+P90_NODE_26386_4-Nitrospina,0.006322175,0.005506768
+YBH_bin111_Ctg70_15-Nitrospina,0.008047009,0.006384625
+YBH_bin143_Ctg193_2-Myxococcales,0,0
+YBH_bin144_Ctg237_2-Syntrophobacterales,0,0
+YBH_bin172_Ctg79_34-Desulfobulbaceae,0,5.66491E-05
+YBH_bin174_Ctg176_10-Deltaproteobacteria,0,0
+YBH_bin175_Ctg115_7-Marinimicrobia,0,0
+YBH_bin17_Ctg75_19-Deltaproteobacteria,0,8.92255E-05
+YBH_bin17_Ctg94_16-Deltaproteobacteria,0,0
+YBH_bin180_Ctg33_20-Nitrospinae,0,0
+YBH_bin181_Ctg9_114-Deltaproteobacteria,0,0
+YBH_bin18_Ctg23_28-Desulfobacteraceae,0,9.11118E-05
+YBH_bin207_Ctg19_35-Hydrogenedentes,0,0
+YBH_bin211_Ctg60_114-Planctomycetes,0,0
+YBH_bin23_Ctg90_3-Spirochaetales,0,0
+YBH_bin26_Ctg267_4-Desulfobacteraceae,0,0
+YBH_bin27_Ctg681_4-Bacteroidetes,0,0
+YBH_bin28_Ctg17_45-Desulfobacterales,0,0
+YBH_bin32_Ctg1_7-Desulfobacteraceae,0,0
+YBH_bin38_Ctg420_6-Deltaproteobacteria,0,0
+YBH_bin3_Ctg49_5-Myxococcales,0,0
+YBH_bin46_Ctg297_1-Desulfobacterales,0,0
+YBH_bin48_Ctg30_53-Desulfobacterales,1.27851E-05,9.1998E-05
+YBH_bin51_Ctg58_6-Aminicenantes,0,0
+YBH_bin52_Ctg187_24-Planctomycetales,0,0
+YBH_bin53_Ctg66_7-Myxococcales,0,0
+YBH_bin54_Ctg189_16-Deltaproteobacteria,0,0
+YBH_bin57_Ctg167_33-Bacteroidetes,0,0
+YBH_bin5_Ctg296_3-Deltaproteobacteria,0,7.77468E-06
+YBH_bin5_Ctg433_3-Deltaproteobacteria,0,0
+YBH_bin61_Ctg105_19-Desulfobacterales,0,9.73522E-05
+YBH_bin62_Ctg105_8-Planctomycetes,0,0
+YBH_bin67_Ctg220_40-Desulfobacteraceae,0,4.84005E-05
+YBH_bin68_Ctg184_2-Desulfobacter,0,0
+YBH_bin70_Ctg99_55-Phycisphaerales,0,0
+YBH_bin71_Ctg476_9-Deltaproteobacteria,0,8.272E-06
+YBH_bin72_Ctg72_1-Desulfobacteraceae,0,0
+YBH_bin75_Ctg108_48-Desulfobacula,0,4.82802E-05
+YBH_bin76_Ctg84_12-Desulfobacteraceae,0,0
+YBH_bin81_Ctg44_17-Bacteroidetes,0,9.34709E-05
+YBH_bin84_Ctg17_78-Bacteroidetes,3.59301E-05,0
+YBH_bin9_Ctg274_20-Deltaproteobacteria,0,8.80526E-05
+

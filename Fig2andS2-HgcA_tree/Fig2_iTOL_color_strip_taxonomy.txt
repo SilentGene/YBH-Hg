@@ -1,0 +1,166 @@
+DATASET_COLORSTRIP
+#In colored strip datasets, each ID is associated to a color box/strip and can have an optional label. Color can be specified in hexadecimal, RGB or RGBA notation. When using RGB or RGBA notation, you cannot use COMMA as the dataset separator
+
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file.
+
+#SEPARATOR TAB
+#SEPARATOR COMMA
+SEPARATOR SPACE
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL Group
+
+#dataset color (can be changed later)
+COLOR #8389d8
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+
+#If COLOR_BRANCHES is set to 1, branches of the tree will be colored according to the colors of the strips above the leaves.
+#When all children of a node have the same color, it will be colored the same, ie. the color will propagate inwards towards the root.
+COLOR_BRANCHES 0
+
+
+#=================================================================#
+#     all other optional settings can be set or changed later     #
+#           in the web interface (under 'Datasets' tab)           #
+#=================================================================#
+
+#Each dataset can have a legend, which is defined using LEGEND_XXX fields below
+#For each row in the legend, there should be one shape, color and label.
+#Optionally, you can define an exact legend position using LEGEND_POSITION_X and LEGEND_POSITION_Y. To use automatic legend positioning, do NOT define these values
+#Optionally, shape scaling can be present (LEGEND_SHAPE_SCALES). For each shape, you can define a scaling factor between 0 and 1.
+#Shape should be a number between 1 and 6, or any protein domain shape definition.
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+
+#LEGEND_TITLE Dataset_legend
+#LEGEND_POSITION_X 100
+#LEGEND_POSITION_Y 100
+#LEGEND_SHAPES 1 1 2 2
+#LEGEND_COLORS #ff0000 #00ff00 rgba(0,255,0,0.5) #0000ff
+#LEGEND_LABELS value1 value2 value3 value4
+#LEGEND_SHAPE_SCALES 1 1 0.5 1
+
+#width of the colored strip
+#STRIP_WIDTH 40
+
+#left margin, used to increase/decrease the spacing to the next dataset. Can be negative, causing datasets to overlap.
+#MARGIN 0
+
+#border width; if set above 0, a border of specified width (in pixels) will be drawn around the color strip
+BORDER_WIDTH 1
+
+#border color; used when BORDER_WIDTH is above 0
+BORDER_COLOR #5b5b5b
+
+#if set to 1, border will be drawn completely around each colored strip box
+#COMPLETE_BORDER 0
+
+#always show internal values; if set, values associated to internal nodes will be displayed even if these nodes are not collapsed. It could cause overlapping in the dataset display.
+SHOW_INTERNAL 1
+
+
+#display or hide the individual label inside each colored strip (when defined in the data below)
+#SHOW_STRIP_LABELS 1
+
+#position of the strip label within the box; 'top', 'center' or 'bottom'
+#STRIP_LABEL_POSITION center
+
+#strip label size factor (relative to the tree leaf labels)
+#STRIP_LABEL_SIZE_FACTOR 1
+
+
+#rotation of the strip labels; used only in rectangular tree display mode
+#STRIP_LABEL_ROTATION 0
+
+#strip label shift in pixels (positive or negative)
+#STRIP_LABEL_SHIFT 0
+
+#STRIP_LABEL_COLOR #000000
+
+#draw a black outline around the text (width in pixels)
+#STRIP_LABEL_OUTLINE 0.5
+
+#display or hide the dataset label above the colored strip
+#SHOW_LABELS 1
+
+#dataset label size factor
+#SIZE_FACTOR 1
+
+#dataset label rotation
+#LABEL_ROTATION 0
+
+#dataset label shift in pixels (positive or negative)
+#LABEL_SHIFT 0
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
+
+#Examples:
+#assign a red colored strip to leaf 9606, with label 'Human'
+#9606 #ff0000 Human
+
+#assign a green, semi-transparent (alpha 0.5) strip to an internal node, without any label. If 'Show internal values' is set to 'No', this will only be displayed if the node is collapsed.
+#9606|5664 rgba(0,255,0,0.5)
+YBH_bin52_Ctg187_24-Planctomycetales|F170_NODE_14708_2-Pirellulaceae #1f77b4 Planctomycetes
+lowF_k141_893660_3-Desulfarculales|lowF_k141_372227_5-Desulfatiglandaceae #ff7f0e Deltaproteobacteria
+YBH_bin172_Ctg79_34-Desulfobulbaceae|P170_NODE_4823_2-Desulfobacterales #ff7f0e Deltaproteobacteria
+P90_NODE_10381_1-Myxococcota|P140_NODE_11547_7-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+P120_NODE_21156_3-Bacteroidetes|YBH_bin84_Ctg17_78-Bacteroidetes #C77CFF Bacteroidetes
+lowP_k141_471069_6-Anaerolineae|P120_NODE_14563_2-Anaerolineae #ff7f0e Deltaproteobacteria
+lowF_k141_215275_2-Desulfatiglandales|lowF_k141_1117838_9-Desulfobacterales #ff7f0e Deltaproteobacteria
+
+
+F120_NODE_12653_4-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+F120_NODE_17476_1-Pirellulaceae #1f77b4 Planctomycetes
+F170_NODE_5139_11-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+lowF_k141_226152_19-Desulfatiglandaceae #ff7f0e Deltaproteobacteria
+lowF_k141_318937_7-Desulfatiglandales #ff7f0e Deltaproteobacteria
+lowF_k141_38619_4-Myxococcota #1f77b4 Planctomycetes
+lowF_k141_600704_2-Anaerolineae #00BF7D Chloroflexi
+lowP_k141_19552_10-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+lowP_k141_824049_7-Anaerolineae #00BF7D Chloroflexi
+lowP_k141_862612_112-Anaerolineaceae #00BF7D Chloroflexi
+P120_NODE_267_17-Bacteroidales #C77CFF Bacteroidetes
+P140_NODE_11547_7-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+P140_NODE_38726_1-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+P170_NODE_17315_2-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+P90_NODE_10381_1-Myxococcota #ff7f0e Deltaproteobacteria
+YBH_bin143_Ctg193_2-Myxococcales #ff7f0e Deltaproteobacteria
+F120_NODE_6426_2-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+YBH_bin211_Ctg60_114-Planctomycetes #1f77b4 Planctomycetes
+YBH_bin27_Ctg681_4-Bacteroidetes #C77CFF Bacteroidetes
+YBH_bin3_Ctg49_5-Myxococcales #ff7f0e Deltaproteobacteria
+YBH_bin53_Ctg66_7-Myxococcales #ff7f0e Deltaproteobacteria
+YBH_bin54_Ctg189_16-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+YBH_bin62_Ctg105_8-Planctomycetes #1f77b4 Planctomycetes
+YBH_bin70_Ctg99_55-Phycisphaerales #1f77b4 Planctomycetes
+YBH_bin71_Ctg476_9-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+YBH_bin81_Ctg44_17-Bacteroidetes #C77CFF Bacteroidetes
+F140_NODE_7788_3-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+P140_NODE_6887_4-Deltaproteobacteria #ff7f0e Deltaproteobacteria
+lowP_k141_107206_3-Desulfatiglandales #ff7f0e Deltaproteobacteria
+lowF_k141_168551_10-Desulfatiglandales #ff7f0e Deltaproteobacteria
+lowP_k141_928192_1-Desulfomonilales #ff7f0e Deltaproteobacteria
+lowF_k141_672005_1-Desulfatiglandaceae #ff7f0e Deltaproteobacteria
+lowP_k141_622823_13-Myxococcota #ff7f0e Deltaproteobacteria
+P90_NODE_26386_4-Nitrospina #fff100 Nitrospinae
+YBH_bin111_Ctg70_15-Nitrospina #fff100 Nitrospinae
+YBH_bin180_Ctg33_20-Nitrospinae #fff100 Nitrospinae
+lowP_k141_531048_3-Nitrospinota #fff100 Nitrospinae
+

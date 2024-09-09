@@ -1,0 +1,64 @@
+---
+title: "Stacked barplot of hgcA abundance"
+---
+
+```{r}
+library(tidyverse)
+setwd("D:/Biology_data/movedtosync/3.Bluehole-Hg/hgcA_abundance")
+```
+
+```{r}
+# Read in the data
+hgcA_abundance <- read_tsv("all-hgcA-abundance.tab")
+head(hgcA_abundance)
+```
+
+```{r}
+# drop the first column
+tax_df <- hgcA_abundance %>% select(-hgcA)
+
+# group by the Taxonomy
+tax_df <- tax_df %>% group_by(Taxonomy) %>% summarise_all(sum)
+tax_df
+```
+# convert to long format
+```{r}
+tax_df_long <- tax_df %>% gather(key = "Sample", value = "Abundance", -Taxonomy)
+tax_df_long <- tax_df_long %>% separate(Sample, c("Sample_type", "Sample_depth"), sep = "_", convert = TRUE)
+tax_df_long
+```
+
+# drop the 'm' from the Sample_depth column and convert to numeric
+```{r}
+tax_df_long$Sample_depth <- as.numeric(gsub("m", "", tax_df_long$Sample_depth))
+tax_df_long$Sample_type <- factor(tax_df_long$Sample_type, levels = c("PA", "FL"))
+```
+
+# plot the facet stacked barplot
+```{r}
+ggplot(tax_df_long, aes(x = Sample_type, y = Abundance, fill = Taxonomy)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~Sample_depth, ncol = 1, strip.position = "right") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs( x = "Life style", y = "Relative abundance")+
+  scale_fill_manual(values = c(
+                                "Bacteroidetes"="#efec5e",
+                                "Chloroflexi"="#33a02c",
+                                "Deltaproteobacteria"="#ff7f00",
+                                "Marinimicrobia"="#1f78b4",
+                                "Myxococcota"="#fdbf6f",
+                                "Nitrospina"="#a6cee3",
+                                "Others"="#cab2d6",
+                                "Planctomycetes"="#b2df8a",
+                                "Vecturithrix"="#e31a1c",
+                                "Verrucomicrobiota"="#6a3d9a")
+                    )+
+  coord_flip() +
+  theme_bw()
+```
+# save the plot
+```{r}
+ggsave("hgcA_abundance_stacked_barplot.png", width = 15, height = 10, units = "cm", dpi = 300)
+ggsave("hgcA_abundance_stacked_barplot.pdf", width = 15, height = 10, units = "cm")
+```
+
