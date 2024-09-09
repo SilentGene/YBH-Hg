@@ -20,5 +20,5 @@ This article forms part of my PhD thesis, the original version of which is publi
 The paper is currently undergoing peer review in the journal *Environmental Microbiome*. This repository will be updated with additional article details following publication.
 
 ## Contact
-Dr Heyu Lin: heyu.lin (at) qut.edu.au
-Dr John Moreau: John.Moreau (at) glasgow.ac.uk
+- Dr Heyu Lin: heyu.lin (at) qut.edu.au
+- Dr John Moreau: John.Moreau (at) glasgow.ac.uk
